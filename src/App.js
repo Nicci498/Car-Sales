@@ -15,11 +15,13 @@ const App = (props) => {
   const removeFeature = item => {
     // dispatch an action here to remove an item
     props.removeFeature(item);
+    props.updateTotal(-item.price)
   };
 
   const buyItem = item => {
     // dipsatch an action here to add an item
     props.buyItem(item)
+    props.updateTotal(item.price)
   };
 
   return (
